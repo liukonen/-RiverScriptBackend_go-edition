@@ -8,7 +8,6 @@ RUN go mod download
 
 COPY *.go ./
 COPY *.rive ./
-COPY *.json ./
 ADD /static /app/static
 RUN go build -o /docker-gs-ping
 
@@ -18,7 +17,6 @@ FROM alpine:latest
 WORKDIR /
 COPY --from=build /docker-gs-ping /docker-gs-ping
 COPY *.rive /
-COPY *.json /
 ADD /static /static
 EXPOSE 5000
 ENTRYPOINT ["/docker-gs-ping"]
