@@ -7,7 +7,7 @@ require (
 	github.com/goddtriffin/helmet v1.0.2
 	github.com/gorilla/mux v1.8.0
 	github.com/swaggo/gin-swagger v1.4.2
-	github.com/swaggo/http-swagger v1.3.3
+	github.com/swaggo/http-swagger v1.3.4
 )
 
 require (
@@ -41,9 +41,9 @@ require (
 	github.com/urfave/cli/v2 v2.24.2 // indirect
 	github.com/xrash/smetrics v0.0.0-20201216005158-039620a65673 // indirect
 	golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4 // indirect
-	golang.org/x/net v0.5.0 // indirect
-	golang.org/x/sys v0.4.0 // indirect
-	golang.org/x/text v0.6.0 // indirect
+	golang.org/x/net v0.7.0 // indirect
+	golang.org/x/sys v0.5.0 // indirect
+	golang.org/x/text v0.7.0 // indirect
 	golang.org/x/tools v0.5.0 // indirect
 	google.golang.org/protobuf v1.26.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
