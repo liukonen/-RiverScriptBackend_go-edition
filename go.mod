@@ -8,7 +8,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/swaggo/gin-swagger v1.5.3
 	github.com/swaggo/http-swagger v1.3.4
-	github.com/swaggo/http-swagger/v2 v2.0.0
+	github.com/swaggo/http-swagger/v2 v2.0.1
 )
 
 require (
