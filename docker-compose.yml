@@ -10,3 +10,7 @@ services:
     ports:
     - 5055:5000
     restart: unless-stopped
+networks:
+  existing-network:
+    external:
+      name: external
