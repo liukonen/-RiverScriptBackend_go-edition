@@ -3,11 +3,11 @@ module src
 go 1.19
 
 require (
-	github.com/aichaos/rivescript-go v0.3.1
+	github.com/aichaos/rivescript-go v0.4.0
 	github.com/goddtriffin/helmet v1.0.2
 	github.com/gorilla/mux v1.8.0
 	github.com/swaggo/gin-swagger v1.6.0
-	github.com/swaggo/http-swagger/v2 v2.0.1
+	github.com/swaggo/http-swagger v1.3.4
 	github.com/swaggo/http-swagger/v2 v2.0.1
 )
 
@@ -32,6 +32,7 @@ require (
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
+	github.com/mattn/go-shellwords v1.0.12 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
@@ -44,7 +45,7 @@ require (
 	golang.org/x/crypto v0.5.0 // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
-	golang.org/x/text v0.8.0 // indirect
+	golang.org/x/text v0.12.0 // indirect
 	golang.org/x/tools v0.7.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
