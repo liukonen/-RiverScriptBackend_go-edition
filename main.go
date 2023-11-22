@@ -17,10 +17,11 @@ import (
 	"github.com/goddtriffin/helmet"
 )
 
-var cache = sync.Map{}
-var bot *rivescript.RiveScript
-var once sync.Once
-
+var (
+	cache = sync.Map{}
+	bot     *rivescript.RiveScript
+	once    sync.Once	
+)
 func main() {
 
 	go func() {
