@@ -6,7 +6,7 @@ import (
 	"github.com/aichaos/rivescript-go"
 	"github.com/gorilla/mux"
 	"github.com/swaggo/http-swagger"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"net/url"
@@ -127,7 +127,7 @@ func GetWeather() (string, error) {
 		}
 		defer resp.Body.Close()
 
-		body, err := ioutil.ReadAll(resp.Body)
+		body, err := io.ReadAll(resp.Body)
 		if err != nil {
 			return "", err
 		}
@@ -156,7 +156,7 @@ func GetInfo(request string) string {
 	}
 	defer res.Body.Close()
 
-	body, err := ioutil.ReadAll(res.Body)
+	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return err.Error()
 	}
