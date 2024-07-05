@@ -49,7 +49,7 @@ func main() {
 		if strings.Contains(query, "weather") {
 			output, err := GetWeather()
 			if err != nil {
-				fmt.Fprintf(w, "For some reason, I can't lookup the weather... odd. I'm indoors, so it doesn't matter to me anyway.")
+				fmt.Fprintf(w, "For some reason, I can't look up the weather... odd. I'm indoors, so it doesn't matter to me anyway.")
 				return
 			}
 			fmt.Fprintf(w, output)
