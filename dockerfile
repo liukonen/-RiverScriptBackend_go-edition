@@ -1,4 +1,4 @@
-FROM golang:alpine AS build
+FROM golang:1.24.3-alpine3.21 AS build
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ RUN go build -o /docker-gs-ping
 
 
 ## Deploy
-FROM alpine:latest
+FROM alpine:3.21.3
 WORKDIR /
 COPY --from=build /docker-gs-ping /docker-gs-ping
 COPY *.rive /
