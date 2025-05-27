@@ -9,7 +9,7 @@ RUN go mod download
 COPY *.go ./
 COPY *.rive ./
 ADD /static /app/static
-RUN go build -o /docker-gs-ping
+RUN go build -ldflags "-s -w" -o /docker-gs-ping
 
 
 ## Deploy
@@ -19,4 +19,5 @@ COPY --from=build /docker-gs-ping /docker-gs-ping
 COPY *.rive /
 ADD /static /static
 EXPOSE 5000
+USER 1000:1000
 ENTRYPOINT ["/docker-gs-ping"]
