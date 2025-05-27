@@ -1,20 +1,15 @@
 version: "3.9"
 
 networks:
-  external-network:
-    name: external-network
-    driver: bridge
+  interlink:
+    external: true
 
 services:
   web-alpine:
-    build:
-      context: .
-      dockerfile: dockerfile
-      labels:
-      - "com.centurylinklabs.watchtower.enable=false"
+    image: ghcr.io/liukonen/riverscriptbackend-go-edition:main
     command: npm start
     ports:
     - 5055:5000
     restart: unless-stopped
     networks:
-      - external-network
+      - interlink
