@@ -13,7 +13,7 @@ RUN go build -ldflags "-s -w" -o /docker-gs-ping
 
 
 ## Deploy
-FROM alpine:3.23.4
+FROM alpine:3.24.0
 WORKDIR /
 COPY --from=build /docker-gs-ping /docker-gs-ping
 COPY *.rive /
