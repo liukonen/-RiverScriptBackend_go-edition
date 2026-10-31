@@ -1,23 +1,17 @@
-FROM golang:1.25.5-alpine3.21 AS build
 
+FROM golang:1.27-alpine@sha256:d200d2dd76b03a99b52651fd1325aff7dcd35422c35c01bac56571b0507f3deb AS build
 WORKDIR /app
-
-COPY go.mod ./
-COPY go.sum ./
+COPY go.mod go.sum ./
 RUN go mod download
-
 COPY *.go ./
 COPY *.rive ./
-ADD /static /app/static
-RUN go build -ldflags "-s -w" -o /docker-gs-ping
+COPY static/ ./static/
+RUN CGO_ENABLED=0 go build -ldflags "-s -w -extldflags '-static'" -o /docker-gs-ping
 
 
-## Deploy
-FROM alpine:3.24.3
-WORKDIR /
+FROM gcr.io/distroless/static-debian13:nonroot@sha256:15f8637509792e05b97d83451b0b6ccfa4abd548f997e406ac1e72c87fe1fa78
 COPY --from=build /docker-gs-ping /docker-gs-ping
-COPY *.rive /
-ADD /static /static
+COPY --from=build /app/*.rive /
+COPY --from=build /app/static /static
 EXPOSE 5000
-USER 1000:1000
 ENTRYPOINT ["/docker-gs-ping"]
