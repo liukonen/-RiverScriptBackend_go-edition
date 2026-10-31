@@ -9,7 +9,7 @@ COPY static/ ./static/
 RUN CGO_ENABLED=0 go build -ldflags "-s -w -extldflags '-static'" -o /docker-gs-ping
 
 
-FROM gcr.io/distroless/static-debian13:nonroot@sha256:15f8637509792e05b97d83451b0b6ccfa4abd548f997e406ac1e72c87fe1fa78
+FROM gcr.io/distroless/static-debian13:nonroot@sha256:18f4cc26c9ffa7f20a359298be7deadac5c607c8e03a02b8119f1a5fc2f82c99
 COPY --from=build /docker-gs-ping /docker-gs-ping
 COPY --from=build /app/*.rive /
 COPY --from=build /app/static /static
